@@ -1,6 +1,6 @@
 # AI for Everyone
 
-![alt text](AI.jpg "AI")
+<img src="/home/Pictures/AI.jpg" alt="Italian Trulli">
 
 ## Key Steps of A Machine Learning Project
 
