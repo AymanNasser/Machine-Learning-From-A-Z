@@ -1,6 +1,9 @@
 # AI for Everyone
 
 ![](/home/an/Pictures/AI.jpg)
+***
+![](/home/an/Pictures/textEditor.png)
+
 
 ## Key Steps of A Machine Learning Project
 
