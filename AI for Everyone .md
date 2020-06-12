@@ -1,8 +1,8 @@
 # AI for Everyone
 
-![](/home/an/Pictures/AI.jpg)
-***
-![](/home/an/Pictures/textEditor.png)
+<p>
+    <img src="/Data Preprocessing/textEditor.png" width="220" height="240" />
+</p>
 
 
 ## Key Steps of A Machine Learning Project
