@@ -1,6 +1,6 @@
 # AI for Everyone
 
-![alt text](AI.jpg)
+<img src="/home/an/Pictures/AI.jpg" width="800" />
 
 ## Key Steps of A Machine Learning Project
 
