@@ -1,9 +1,4 @@
-# AI for Everyone
-
-<p>
-    <img src="/Data Preprocessing/textEditor.png" width="220" height="240" />
-</p>
-
+# AI for Everyone :joy:
 
 ## Key Steps of A Machine Learning Project
 
