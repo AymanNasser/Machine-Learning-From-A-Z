@@ -6,7 +6,8 @@ Assumptions of Linear Regression:
 3. Multivariate normality
 4. Independence of errors
 5. Lack of multicollinearity
-    
+> The linearity in regressions refers to the coefficients not the variables 
+   
 > For every ***categorical variable*** in a specific column we usually set each variable 
 in a seperate column working as switches (***dummy variable*** ) 
 >
