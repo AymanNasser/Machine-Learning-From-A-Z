@@ -6,8 +6,24 @@ Assumptions of Linear Regression:
 3. Multivariate normality
 4. Independence of errors
 5. Lack of multicollinearity
+    
+> For every ***categorical variable*** in a specific column we usually set each variable 
+in a seperate column working as switches (***dummy variable*** ) 
+>
+> Always __omit (remove)__ one dummy variable from model irrespective of no. of dummy 
+> variables 
 
-Always __omit (remove)__ one dummy variable from model
+> Statistical significance: it's a point when in human intuitive terms, you get uneasy about the 
+> null hypothesis being true
+>
+> R-squared (R2) is a statistical measure that represents the proportion of the variance for 
+> a dependent variable that's explained by an independent variable or variables in a regression model. 
+> 
+> Whereas correlation explains the strength of the relationship between an independent and dependent variable, R-squared explains to what extent the variance of one variable explains the variance of the second variable. So, if the R2 of a model is 0.50, 
+> then approximately half of the observed variation can be explained by the model's inputs.
+
+*** 
+
 
 
 ### Simple LR
@@ -15,5 +31,39 @@ Always __omit (remove)__ one dummy variable from model
 - To retrieve theta_0 & theta_1 __coefficients__ we use `regressor.coef_` & `regressor.intercept`
 as our `f(x) = intercept_ + coef_ * x`
 
+***
 ### Multiple LR
- 
+In Multiple LR we don't need to do ***feature scaling*** due to multiplied coff. (b0,b1,etc)
+
+### Methods of Building a Model
+Multiple Linear Regression has several techniques to build an effective model namely:
+
+1. All-in 
+2. Backward elimination 
+3. Forward selection
+4. Bidirectional elimination
+
+#### All-in
+Throwing all our variables to the model
+
+#### Backward elimination 
+Steps:
+1. Select a significance level to stay in the model (eg. `SL = 0.05`)
+2. Fit the model with all possible predictors
+3. Consider the predictor with the highest P-value. If `P>SL`, this predictor is excluded
+4. Remove (**eliminate**) the predictor
+5. Fit the model without this variable and repeat the step c until the condition `P>SL` 
+becomes false 
+> At the end, we'll have variables with P-Value less than Selected SL
+
+#### Forward selection
+Steps:
+1. Select a significance level to enter in the model (eg. SL = 0.05)
+2. Fit all simple regression models y ~ Xn **Select** the one with the lowest P-Value
+3. Keep this variable and keep fit all possible models with one extra predictor added to the 
+one(s) we already have 
+4. Consider the predictor with the lowest P-Value. If P < SL, go to step-3, otherwise model is finished
+
+#### Bidirectional elimination
+A combination of the above, testing at each step for variables to be included or excluded
+

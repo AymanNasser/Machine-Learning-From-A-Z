@@ -1,4 +1,4 @@
-# AI for Everyone :joy:
+# AI for Everyone
 
 ## Key Steps of A Machine Learning Project
 
