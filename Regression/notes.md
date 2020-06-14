@@ -98,4 +98,3 @@ input & assign the new data point the ***Average across all the predicted Y valu
 > __`Adjusted (R2) = 1 - (1-(R2))*( n-1 / n-p-1 )  `__ where P: number of independent variables
 > and n: sample size
 
->
