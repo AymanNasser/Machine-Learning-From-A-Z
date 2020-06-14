@@ -16,16 +16,10 @@ in a seperate column working as switches (***dummy variable*** )
 
 > Statistical significance: it's a point when in human intuitive terms, you get uneasy about the 
 > null hypothesis being true
->
-> R-squared (R2) is a statistical measure that represents the proportion of the variance for 
-> a dependent variable that's explained by an independent variable or variables in a regression model. 
-> 
-> Whereas correlation explains the strength of the relationship between an independent and dependent variable, R-squared explains to what extent the variance of one variable explains the variance of the second variable. So, if the R2 of a model is 0.50, 
-> then approximately half of the observed variation can be explained by the model's inputs.
 
+> Ensemble learning: is when we take **multiple** algorithms or **same** algorithm multiple times
+> and put them together to make something much more powerful than the original 
 *** 
-
-
 
 ### Simple LR
 - To retrieve a specific value for **input(x)** we use `regressor.predict([[x]])`
@@ -72,3 +66,36 @@ A combination of the above, testing at each step for variables to be included or
 ### Support Vector Regression
 Epsilon-intensive tube is a margin of error that we allowed our model to have & not caring 
 about any error inside the tube 
+
+### Random Forest Regression
+Steps:
+1. Pick at random K data points from the training set
+2. Build a decision tree associated to these K data points
+3. Choose the number of trees we want to build & **repeat** steps 1,2
+4. For a new data point, make **each one** of our built trees predict the value of new data 
+input & assign the new data point the ***Average across all the predicted Y values***
+
+## Evaluating Regression Models Performance
+> R-squared (R2) is a statistical measure that represents the proportion of the variance for 
+> a dependent variable that's explained by an independent variable or variables in a regression model. 
+> 
+> Whereas correlation explains the strength of the relationship between an independent and dependent variable, R-squared explains to what extent the variance of one variable explains the variance of the second variable. So, if the R2 of a model is 0.50, 
+> then approximately half of the observed variation can be explained by the model's inputs.
+> 
+> Sum of squares of residuals (SSres): `SUM(predicted_y(i) - actual_y(i))^2`
+> 
+> Total sum of squares (SStot): `SUM(predicted_y(i) - average_y(i))^2` 
+>
+> __`R-squared (R2) = 1 - SSres / SStot`__
+> 
+> The close R2 gets to **one** the better because, SSres will then equal to zero 
+>
+> Adjusted (R2): is a good metric as it helps us to understand whether adding good variables
+> to model or they're redundant, if we're adding a variable that isn't good for our model
+> then, the **(R2) will insignificantly inc.** & the term **P will also inc.** which leads to 
+> **dec. of adjusted (R2)**
+>
+> __`Adjusted (R2) = 1 - (1-(R2))*( n-1 / n-p-1 )  `__ where P: number of independent variables
+> and n: sample size
+
+>
