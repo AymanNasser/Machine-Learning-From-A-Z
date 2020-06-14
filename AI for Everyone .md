@@ -38,3 +38,22 @@ ___
 > - [x] Mislabeled data
 > - [x] Ambiguous labels
 ___
+Examples of roles in the field:
+- ML engineer
+- ML researcher
+- Applied ML scientist
+- Data scientist
+- Data engineer
+- AI product manager
+---
+## AI Transformation Playbook
+- Execute pilot projects to gain momentum
+- Build an in-house AI team
+- Provide AI training
+- Develop AI strategy
+  - Leverage AI to create an advantage specific to company's industry
+  - Design strategy aligned with the ***Virtuous Cycle of AI***, More data, better product, more users
+  - Consider creating a data strategy, also **unified data warehouse** 
+- Develop internal & external communications
+  - Investor relations
+  - Government relations
