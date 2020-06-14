@@ -68,3 +68,7 @@ one(s) we already have
 #### Bidirectional elimination
 A combination of the above, testing at each step for variables to be included or excluded
 
+***
+### Support Vector Regression
+Epsilon-intensive tube is a margin of error that we allowed our model to have & not caring 
+about any error inside the tube 
