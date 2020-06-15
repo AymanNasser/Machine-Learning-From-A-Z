@@ -14,14 +14,12 @@
 > - false negatives (FN): We predicted no, but they actually do have the disease. (Also known as a "Type II error.")
 > 
 > his is a list of rates that are often computed from a confusion matrix for a binary classifier:
-> ~~~~
+> 
 > Accuracy: Overall, how often is the classifier correct? `(TP+TN)/total`
 >
-> Mis-classification Rate: Overall, how often is it wrong? `(FP+FN)/total`,
-> equivalent to 1 minus Accuracy also known as "Error Rate"
+> Mis-classification Rate: Overall, how often is it wrong? `(FP+FN)/total`, equivalent to 1 minus Accuracy also known as "Error Rate"
 >
-> True Positive Rate: When it's actually yes, how often does it predict yes? `TP/actual yes`  
-> also known as "Sensitivity" or "Recall"
+> True Positive Rate: When it's actually yes, how often does it predict yes? `TP/actual yes`, also known as "Sensitivity" or "Recall"
 >
 > False Positive Rate: When it's actually no, how often does it predict yes? `FP/actual no`
 >
@@ -30,4 +28,14 @@
 > Precision: When it predicts yes, how often is it correct? `TP/predicted yes`
 > 
 > Prevalence: How often does the yes condition actually occur in our sample? `actual yes/total`
- ~~~~
+
+## K-Nearest Neighbor  
+The KNN algorithm assumes that similar things exist in close proximity. In other words, similar things are near to 
+each other, calculating the distance between points on a graph
+
+Steps:
+1. Initialize K to a chosen number of neighbors, **default may be = 5**
+2. Take the K nearest neighbour for the new data point, according to the eculidean distance
+3. Among these K neighbour, count the number of data points in each category 
+4. Assign the new data point to the category where we counted the most neighbours
+
