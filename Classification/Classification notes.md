@@ -43,7 +43,9 @@ non-linear separable data into a higher dimensional space, making our data linea
 dimensional space SVM can then be easily implemented 
 ![Kernel_Trick Image](../Images/KernelTrick.jpg)
 
+
 Types of Kernels:
+
 ![Kernel_Types Image](../Images/SVM-Kernel-Function-Types.png)
 
 
