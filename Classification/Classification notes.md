@@ -39,3 +39,24 @@ Steps:
 3. Among these K neighbour, count the number of data points in each category 
 4. Assign the new data point to the category where we counted the most neighbours
 
+## Naive Bayes 
+A Naive Bayes classifier is a probabilistic machine learning model that’s used for classification task. The crux of the
+classifier is based on the **Bayes theorem**
+
+We make two assumptions here: 
+1. Consider that these predictors are **independent**, that's why the algorithm is called *Naive*
+2. All the predictors have an equal effect on the outcome, (Marginal likelihood is similar)
+
+Types of Naive Bayes Classifier:
+1. Multinomial Naive Bayes:
+This is mostly used for document classification problem, i.e whether a document belongs to the category of sports, 
+politics, technology etc. The features/predictors used by the classifier are the frequency of the words present in the 
+document
+
+2. Bernoulli Naive Bayes:
+This is similar to the multinomial naive bayes but the predictors are boolean variables. The parameters that we use to
+predict the class variable take up only values yes or no
+
+3. Gaussian Naive Bayes:
+When the predictors take up a continuous value and are not discrete, we assume that these values are sampled from a 
+gaussian distribution

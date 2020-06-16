@@ -1,5 +1,7 @@
 # AI for Everyone
 
+![AI Image](Images/AI.jpg)
+
 ## Key Steps of A Machine Learning Project
 
 > 1. Collect data 
