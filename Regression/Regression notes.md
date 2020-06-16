@@ -21,13 +21,13 @@ in a seperate column working as switches (***dummy variable*** )
 > and put them together to make something much more powerful than the original 
 *** 
 
-### Simple LR
+## Simple LR
 - To retrieve a specific value for **input(x)** we use `regressor.predict([[x]])`
 - To retrieve theta_0 & theta_1 __coefficients__ we use `regressor.coef_` & `regressor.intercept`
 as our `f(x) = intercept_ + coef_ * x`
 
 ***
-### Multiple LR
+## Multiple LR
 In Multiple LR we don't need to do ***feature scaling*** due to multiplied coff. (b0,b1,etc)
 
 ### Methods of Building a Model
@@ -62,12 +62,11 @@ one(s) we already have
 #### Bidirectional elimination
 A combination of the above, testing at each step for variables to be included or excluded
 
-***
-### Support Vector Regression
+## Support Vector Regression
 Epsilon-intensive tube is a margin of error that we allowed our model to have & not caring 
 about any error inside the tube 
 
-### Random Forest Regression
+## Random Forest Regression
 Steps:
 1. Pick at random K data points from the training set
 2. Build a decision tree associated to these K data points
