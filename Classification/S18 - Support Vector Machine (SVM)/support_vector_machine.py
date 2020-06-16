@@ -22,6 +22,14 @@ X_train = sc.fit_transform(X_train)
 X_test = sc.transform(X_test)
 
 # Training the SVM model on the Training set
+# - Regularization: With a smaller C value, we obtain hyperplane of small margin and with a larger C value,
+# we obtain hyperplane of larger value.
+
+# - Gamma: With a lower value of Gamma will create a loose fit of the training dataset. On the contrary, a high value
+# of gamma will allow the model to get fit more appropriately. A low value of gamma only provides consideration to
+# the nearby points for the calculation of a separate plane whereas the high value of gamma will consider all
+# the data-points to calculate the final separation line
+
 classifier = SVC(kernel = 'linear', random_state = 0)
 classifier.fit(X_train, y_train)
 

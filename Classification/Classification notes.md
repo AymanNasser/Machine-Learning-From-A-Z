@@ -1,8 +1,8 @@
 # Classification Notes
 
 ## Logistic Regression
-- Logistic regression is linear classifier 
-- Logistic regression returns probabilities
+Logistic regression is linear classifier & returns probabilities
+![Log_Reg Image](../Images/LogiReg.jpg)
 
 ## K-Nearest Neighbor  
 The KNN algorithm assumes that similar things exist in close proximity. In other words, similar things are near to 
@@ -10,13 +10,14 @@ each other, calculating the distance between points on a graph
 
 Steps:
 1. Initialize K to a chosen number of neighbors, **default may be = 5**
-2. Take the K nearest neighbour for the new data point, according to the eculidean distance
+2. Take the K nearest neighbour for the new data point, according to the Eculidean distance
 3. Among these K neighbour, count the number of data points in each category 
 4. Assign the new data point to the category where we counted the most neighbours
 
 ## Support Vector Machine
 Support vector machine is highly preferred by many as it produces **significant accuracy** with less computation power. 
 ![SVM Image](../Images/SVM2.png)
+
 The objective of the support vector machine algorithm is to find a hyperplane in an N-dimensional space(N — the number 
 of features) that distinctly classifies the data points & maximum margin, i.e the maximum distance between data points 
 of both classes
@@ -29,6 +30,23 @@ features is 3, then the hyperplane becomes a two-dimensional plane
 In SVM, we take the output of the linear function and if that output is greater than 1, we identify it with one class
 and if the output is -1, we identify is with another class. Since the threshold values are changed to 1 and -1 in 
 SVM, we obtain this reinforcement range of values([-1,1]) which acts as margin
+
+The are two main types of classification SVM algorithms Hard Margin and Soft Margin:
+- **Hard Margin:** aims to find the best hyperplane without tolerating any form of mis-classification.
+- **Soft Margin:** we add a degree of tolerance in SVM. In this way we allow the model to voluntary misclassify a few data
+points if that can lead to identifying a hyperplane able to generalise better to unseen data.
+
+#### Kernel Trick
+If the data we are working with is not linearly separable (therefore leading to poor linear SVM 
+classification results), it is possible to apply a technique known as the Kernel Trick. This method is able to map our 
+non-linear separable data into a higher dimensional space, making our data linearly separable. Using this new 
+dimensional space SVM can then be easily implemented 
+![Kernel_Trick Image](../Images/KernelTrick.jpg)
+
+Types of Kernels:
+![Kernel_Types Image](../Images/SVM-Kernel-Function-Types.png)
+
+
 ## Naive Bayes 
 A Naive Bayes classifier is a probabilistic machine learning model that’s used for classification task. The crux of the
 classifier is based on the **Bayes theorem**
