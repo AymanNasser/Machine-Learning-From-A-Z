@@ -1,49 +1,45 @@
+# Grid Search
+
 # Importing the libraries
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
-from sklearn.model_selection import train_test_split, cross_val_score
-from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import confusion_matrix, accuracy_score
-from sklearn.svm import SVC
-from sklearn.model_selection import GridSearchCV
+
 # Importing the dataset
 dataset = pd.read_csv('Social_Network_Ads.csv')
 X = dataset.iloc[:, :-1].values
 y = dataset.iloc[:, -1].values
 
 # Splitting the dataset into the Training set and Test set
-
+from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25, random_state = 0)
 
 # Feature Scaling
+from sklearn.preprocessing import StandardScaler
 sc = StandardScaler()
 X_train = sc.fit_transform(X_train)
 X_test = sc.transform(X_test)
 
 # Training the Kernel SVM model on the Training set
+from sklearn.svm import SVC
 classifier = SVC(kernel = 'rbf', random_state = 0)
 classifier.fit(X_train, y_train)
 
-# Predicting a new result
-print(classifier.predict(sc.transform([[30,87000]])))
-
-# Predicting the Test set results
+# Making the Confusion Matrix
+from sklearn.metrics import confusion_matrix, accuracy_score
 y_pred = classifier.predict(X_test)
-#print(np.concatenate((y_pred.reshape(len(y_pred),1), y_test.reshape(len(y_test),1)),1))
+cm = confusion_matrix(y_test, y_pred)
+print(cm)
+accuracy_score(y_test, y_pred)
 
-# Making the Confusion Matrix & accuracy
-print(confusion_matrix(y_test, y_pred))
-print(accuracy_score(y_test, y_pred))
-
-# Applying K-Fold Cross Validation
-# cv: number of trained test folds
-accuracies = cross_val_score(estimator= classifier, X=X_train, y=y_train, cv= 10)
-print(accuracies)
-print('Accuracy: {:.2f} %'.format(accuracies.mean()*100))
-print('Standard Deviation: {:.2f} %'.format(accuracies.std()*100))
+# Applying k-Fold Cross Validation
+from sklearn.model_selection import cross_val_score
+accuracies = cross_val_score(estimator = classifier, X = X_train, y = y_train, cv = 10)
+print("Accuracy: {:.2f} %".format(accuracies.mean()*100))
+print("Standard Deviation: {:.2f} %".format(accuracies.std()*100))
 
 # Applying Grid Search to find the best model and the best parameters
+from sklearn.model_selection import GridSearchCV
 parameters = [{'C': [0.25, 0.5, 0.75, 1], 'kernel': ['linear']},
               {'C': [0.25, 0.5, 0.75, 1], 'kernel': ['rbf'], 'gamma': [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]}]
 grid_search = GridSearchCV(estimator = classifier,
@@ -54,7 +50,6 @@ grid_search = GridSearchCV(estimator = classifier,
 grid_search.fit(X_train, y_train)
 best_accuracy = grid_search.best_score_
 best_parameters = grid_search.best_params_
-
 print("Best Accuracy: {:.2f} %".format(best_accuracy*100))
 print("Best Parameters:", best_parameters)
 

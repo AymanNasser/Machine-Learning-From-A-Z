@@ -44,7 +44,7 @@ y = label_encode.fit_transform(y)
 
 # Splitting the data set into the Training set and Test set
 # random_state = 1 ==> fixing the randomization to always produces the same randomized output
-X_train, X_test, y_train, y_test = train_test_split(X,y, test_size= 0.2, random_state= 1)
+X_train, X_test, y_train, y_test = train_test_split(X,y, test_size= 0.2, random_state= 0)
 
 # Feature scaling
 stand_scaler = StandardScaler()
