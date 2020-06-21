@@ -26,8 +26,9 @@ X[:, 1:3] = imputer.transform(X[:, 1:3])
 #print(X)
 
 # Encoding categorical data using 1-Hot encoding
+# We encode categorical data using one hot encoder to prevent our model from mis-interpreting some co-relations
+# between different numbers in the same column, the model will misunderstand the data to be in some kind of order
 
-# We encode categorical data to prevent our model from mis-interpreting some co-relations between features & labels
 # ColumnTransformer(transformers, *, remainder='drop', sparse_threshold=0.3, n_jobs=None, transformer_weights=None, verbose=False)
 # transformers list of tuples : List of (name of transformation, transformer, columns to be transformed) tuples
 # specifying the transformer objects to be applied to subsets of the data.
